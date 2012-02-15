@@ -137,4 +137,10 @@ config BR2_TARGET_UBOOT_ETH1ADDR
 
 endif # BR2_TARGET_UBOOT_NETWORK
 
+config BR2_TARGET_UBOOT_SPL
+	bool "U-Boot SPL support"
+	depends on !BR2_TARGET_XLOADER
+	help
+	  Enable the U-Boot SPL support
+
 endif # BR2_TARGET_UBOOT
