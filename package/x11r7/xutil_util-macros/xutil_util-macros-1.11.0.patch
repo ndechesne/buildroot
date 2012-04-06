@@ -1,0 +1,11 @@
+Index: xutil_util-macros-1.11.0/xorg-macros.m4.in
+===================================================================
+--- xutil_util-macros-1.11.0.orig/xorg-macros.m4.in	2010-10-30 05:42:04.000000000 +0200
++++ xutil_util-macros-1.11.0/xorg-macros.m4.in	2012-04-06 22:59:40.562293671 +0200
+@@ -1130,3 +1130,6 @@
+ echo 'util-macros \"pkgdatadir\" from xorg-macros.pc not found: installing possibly empty INSTALL.' >&2)"
+ AC_SUBST([INSTALL_CMD])
+ ]) # XORG_INSTALL
++
++# Buildroot stuff
++AC_SUBST(STAGING_DIR)

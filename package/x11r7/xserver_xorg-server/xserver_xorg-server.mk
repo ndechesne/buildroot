@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-XSERVER_XORG_SERVER_VERSION = 1.7.5
+XSERVER_XORG_SERVER_VERSION = 1.11.4
 XSERVER_XORG_SERVER_SOURCE = xorg-server-$(XSERVER_XORG_SERVER_VERSION).tar.bz2
 XSERVER_XORG_SERVER_SITE = http://xorg.freedesktop.org/releases/individual/xserver
 XSERVER_XORG_SERVER_MAKE = $(MAKE1) # make install fails with parallel make
@@ -40,6 +40,7 @@ XSERVER_XORG_SERVER_DEPENDENCIES = 	\
 	xproto_inputproto 		\
 	xproto_kbproto 			\
 	xproto_randrproto 		\
+	xproto_recordproto      \
 	xproto_renderproto 		\
 	xproto_resourceproto 		\
 	xproto_videoproto 		\
@@ -111,11 +112,6 @@ endif
 
 ifeq ($(BR2_PACKAGE_FREETYPE),y)
 XSERVER_XORG_SERVER_DEPENDENCIES += freetype
-endif
-
-ifeq ($(BR2_PACKAGE_XPROTO_RECORDPROTO),y)
-XSERVER_XORG_SERVER_DEPENDENCIES += xproto_recordproto
-XSERVER_XORG_SERVER_CONF_OPT += --enable-record
 endif
 
 ifneq ($(BR2_PACKAGE_XLIB_LIBXVMC),y)
